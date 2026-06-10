@@ -10,5 +10,10 @@
 ## Workflow
 - Task non banali: proponi un piano e attendi il mio ok prima di scrivere codice.
 - Mai `commit` o `push` se non te lo chiedo esplicitamente.
-- Dopo aver modificato il codice: esegui test e linter del progetto e riportami l'esito.
+- Dopo aver modificato il codice esegui il linter del progetto e riportami l'esito.
 - Se un'istruzione è ambigua o un'azione è rischiosa/irreversibile, fermati e chiedi invece di indovinare.
+
+## Testing
+- TDD come default: quando aggiungi o cambi un comportamento, scrivi prima il test che fallisce, poi il codice minimo che lo fa passare.
+- Ogni modifica va validata dai test (esistenti + nuovi) prima di considerarla completa: eseguili e riportami l'esito.
+- Unica eccezione: se ti dico esplicitamente che sto facendo uno *spike*, salta TDD e test e punta alla soluzione più rapida.
