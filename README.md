@@ -4,6 +4,11 @@ Le mie configurazioni personali, portabili tra macchine.
 
 ## Cosa contiene
 - `claude/CLAUDE.md` — linee guida personali per Claude Code (caricate in ogni sessione, in qualsiasi cartella).
+- `zsh/` — `.zshrc`, `.zsh_aliases`, `.zprofile`.
+- `bash/.bash_profile` — init SDKMAN.
+- `git/` — `.gitconfig` e `ignore` globale (`~/.config/git/ignore`).
+- `vim/.vimrc`.
+- `ghostty/config` — config del terminale Ghostty (`~/.config/ghostty/config`).
 
 ## Installazione su un nuovo PC
 ```bash

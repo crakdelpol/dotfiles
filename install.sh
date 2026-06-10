@@ -22,4 +22,22 @@ echo "Installazione dotfiles da $DOTFILES"
 # Claude Code
 link "claude/CLAUDE.md" ".claude/CLAUDE.md"
 
+# zsh
+link "zsh/.zshrc"        ".zshrc"
+link "zsh/.zsh_aliases"  ".zsh_aliases"
+link "zsh/.zprofile"     ".zprofile"
+
+# bash
+link "bash/.bash_profile" ".bash_profile"
+
+# git
+link "git/.gitconfig" ".gitconfig"
+link "git/ignore"     ".config/git/ignore"
+
+# vim
+link "vim/.vimrc" ".vimrc"
+
+# ghostty
+link "ghostty/config" ".config/ghostty/config"
+
 echo "Fatto."

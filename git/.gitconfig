@@ -1,0 +1,28 @@
+[user]
+	name = matteo pipitone
+	email = matteo.pipitone93@gmail.com
+	signingkey = 19F34BF77F2FB6AFC7AF61AAA3F2306AE1E15E88
+[push]
+  default = simple
+  followTags = true
+[core]
+  editor = vim
+  autocrlf = false
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  light = false
+  line-numbers = true
+  diff-so-fancy = true
+[merge]
+  conflictStyle = merge
+[commit]
+  verbose = true
+  gpgsign = true
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main
+
