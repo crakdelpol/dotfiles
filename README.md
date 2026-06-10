@@ -4,6 +4,7 @@ Le mie configurazioni personali, portabili tra macchine.
 
 ## Cosa contiene
 - `claude/CLAUDE.md` — linee guida personali per Claude Code (caricate in ogni sessione, in qualsiasi cartella).
+- `claude/skills/` — skill per fase di lavoro (`discovery`, `new-feature`, `refactor`, `bugfix`), caricate on-demand o invocabili con `/<nome>`.
 - `zsh/` — `.zshrc`, `.zsh_aliases`, `.zprofile`.
 - `bash/.bash_profile` — init SDKMAN.
 - `git/` — `.gitconfig` e `ignore` globale (`~/.config/git/ignore`).

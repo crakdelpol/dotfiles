@@ -21,6 +21,7 @@ echo "Installazione dotfiles da $DOTFILES"
 
 # Claude Code
 link "claude/CLAUDE.md" ".claude/CLAUDE.md"
+link "claude/skills"   ".claude/skills"
 
 # zsh
 link "zsh/.zshrc"        ".zshrc"
