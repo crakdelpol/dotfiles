@@ -21,3 +21,36 @@ alias listen="lsof -w -n -i $1"
 alias edit="vim ~/.zshrc"
 alias edit_alias="vim ~/.zsh_aliases"
 alias cls="clear"
+
+# Trova il launcher CLI di un'app JetBrains via Spotlight (portabile tra macchine).
+# Uso: _jetbrains_launcher <nome-binario> <bundle-id> [bundle-id-fallback...]
+_jetbrains_launcher() {
+  local bin=$1; shift
+  local bundle app
+  for bundle in "$@"; do
+    app=$(mdfind "kMDItemCFBundleIdentifier == '$bundle'" 2>/dev/null | head -1)
+    [[ -n $app ]] && { echo "$app/Contents/MacOS/$bin"; return 0 }
+  done
+  return 1
+}
+
+# Apre IntelliJ IDEA: senza argomenti usa la cartella corrente
+idea() {
+  local l; l=$(_jetbrains_launcher idea com.jetbrains.intellij com.jetbrains.intellij.ce) \
+    || { echo "IntelliJ IDEA non trovata" >&2; return 1 }
+  "$l" "${@:-.}"
+}
+
+# Apre WebStorm: senza argomenti usa la cartella corrente
+webstorm() {
+  local l; l=$(_jetbrains_launcher webstorm com.jetbrains.WebStorm) \
+    || { echo "WebStorm non trovata" >&2; return 1 }
+  "$l" "${@:-.}"
+}
+
+# Apre PyCharm: senza argomenti usa la cartella corrente
+pycharm() {
+  local l; l=$(_jetbrains_launcher pycharm com.jetbrains.pycharm com.jetbrains.pycharm.ce) \
+    || { echo "PyCharm non trovata" >&2; return 1 }
+  "$l" "${@:-.}"
+}
