@@ -17,6 +17,9 @@ Se il booleano **non** seleziona comportamento (es. è un dato che viene solo sa
 
 > **Più flag insieme = un type code.** Se il metodo ha *più* booleani mutuamente esclusivi (es. `process(isAdmin, isGuest, isBanned)`), non sono due casi ma **N varianti** di un tipo travestito da flag. Conseguenze sul processo: in Fase A crei *un metodo esplicito per variante* (N, non 2), e la Fase B è **già giustificata in partenza** (è un type code ricco) — punta dritto al polimorfismo. Nota anche la combinazione "tutti false" come variante di default.
 
+## Commit e branch
+Quando i passaggi vanno committati (solo se l'utente lo chiede esplicitamente), **non committare direttamente sul branch di default** (`main`/`master`): prima crea un branch dedicato. **Proponi tu un nome di branch** descrittivo e attendi conferma, oppure chiedi all'utente quale preferisce. Convenzione suggerita: `refactor/remove-flag-<metodo>` (es. `refactor/remove-flag-update-quality`). Crea il branch **prima del primo commit**, poi committa un passaggio per commit come da fasi sotto.
+
 ## Step 0 — Rete di sicurezza (obbligatorio, prima di tutto)
 - **Se esiste già** un master test / suite che copre il comportamento, non riscriverlo: **eseguilo** per confermare che parta verde e verifica che copra davvero tutti i rami (vedi fault injection sotto). Solo se manca o è insufficiente, scrivilo.
 - Scrivi/verifica un **master test** (golden master / characterization test) *esterno* al metodo: esercita il comportamento osservabile per **ogni** valore del flag (o **ogni** variante, se i flag sono più d'uno — vedi nota sotto) e ne blocca l'output. Questo è l'unico giudice del fatto che il comportamento non cambi.
